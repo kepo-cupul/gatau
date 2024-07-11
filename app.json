@@ -3,6 +3,7 @@
   "description": "coba tebak",
   "repository": "https://github.com/kepo-cupul/entahlah",
   "logo": "https://avatars.githubusercontent.com/u/79621549?v=4",
+  "stack": "container",
   "keywords": [
         "tebak sendiri",
         "gatau apa ini",
