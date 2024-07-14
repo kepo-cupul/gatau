@@ -8,9 +8,7 @@ RUN apt update -y && apt upgrade -y
 RUN apt install ffmpeg imagemagick neofetch ssh wget curl unzip git nodejs npm -y
 
 # Install Speedtest
-RUN wget https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-x86_64.tgz && \
-  tar zxvf ookla-speedtest-1.1.1-linux-x86_64.tgz && \
-  mv speedtest /usr/bin
+RUN wget https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-x86_64.tgz && tar zxvf ookla-speedtest-1.1.1-linux-x86_64.tgz && mv speedtest /usr/bin
   
 # Install Ngrok
 RUN wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz" && tar -zxvf ngrok.tgz && mv ngrok /usr/bin
