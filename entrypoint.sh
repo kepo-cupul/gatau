@@ -20,6 +20,5 @@ mkdir tmp
 
 echo "Install modules..."
 npm install
-npm install -g pm2 ts-node
 npm install @tensorflow/tfjs-node
 pm2 start "ts-node src --web" --name a
