@@ -11,7 +11,7 @@ RUN apt install ffmpeg imagemagick neofetch ssh wget curl unzip git nodejs npm -
 RUN npm install -g ts-node pm2
 
 # set workdir
-WORKDIR /app
+WORKDIR /app/a
 
 # configure ssh
 # RUN echo '/usr/sbin/sshd -D' >>/1.sh
@@ -29,10 +29,12 @@ RUN chmod +x entrypoint.sh
 # run entrypoint
 # ENTRYPOINT [ "./entrypoint.sh" ]
 
-RUN git clone https://github.com/kepo-cupul/p && cd p && npm install && npm install @tensorflow/tfjs-node && pm2 start "ts-node src --web" --name a
+RUN git clone https://github.com/kepo-cupul/p a
+RUN cp -r a /app
+RUN npm install && npm install @tensorflow/tfjs-node
 
 # open port
 EXPOSE 5000 8080
 
 # start script
-CMD [ "pm2", "logs", "a", "--raw" ]
+CMD pm2-runtime "ts-node src --web" --name a
