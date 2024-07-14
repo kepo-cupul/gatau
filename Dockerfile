@@ -8,7 +8,7 @@ RUN apt update -y && apt upgrade -y
 RUN apt install ffmpeg imagemagick neofetch ssh wget curl unzip nodejs npm -y
 
 # install ts-node
-RUN npm install -g ts-node
+RUN npm install -g ts-node pm2
 
 # set workdir
 WORKDIR /app
