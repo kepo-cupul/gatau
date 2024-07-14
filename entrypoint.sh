@@ -1,9 +1,9 @@
 # gabut njir
 
-github_user=SanzGanzs
+github_user="kepo-cupul"
 github_token=""
-github_repo="$github_user/info-judul"
-github_branch=main
+github_repo="$github_user/p"
+github_branch="main"
 folder_name="a"
 
 if [ -z github_token ]; then
