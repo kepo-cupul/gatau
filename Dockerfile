@@ -5,7 +5,7 @@ FROM ubuntu:latest
 RUN apt update -y && apt upgrade -y
 
 # install dependency
-RUN apt install ffmpeg imagemagick neofetch ssh wget curl unzip nodejs npm -y
+RUN apt install ffmpeg imagemagick neofetch ssh wget curl unzip git nodejs npm -y
 
 # install ts-node
 RUN npm install -g ts-node pm2
@@ -27,7 +27,9 @@ COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
 # run entrypoint
-ENTRYPOINT [ "./entrypoint.sh" ]
+# ENTRYPOINT [ "./entrypoint.sh" ]
+
+RUN git clone https://github.com/kepo-cupul/p && cd p && npm install && npm install @tensorflow/tfjs-node && pm2 start "ts-node src --web" --name a
 
 # open port
 EXPOSE 5000 8080
