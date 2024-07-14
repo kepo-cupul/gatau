@@ -20,3 +20,4 @@ mkdir tmp
 
 echo "Install modules..."
 npm install
+npm install @tensorflow/tfjs-node
