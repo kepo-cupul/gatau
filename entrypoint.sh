@@ -1,7 +1,7 @@
 # gabut njir
 
 github_user=SanzGanzs
-github_token=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
+github_token=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
 github_repo="$github_user/info-judul"
 github_branch=main
 folder_name="a"
