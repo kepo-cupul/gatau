@@ -32,5 +32,7 @@ ENTRYPOINT [ "./entrypoint.sh" ]
 # open port
 EXPOSE 5000 8080
 
+RUN cd a
+
 # start script
 CMD [ "npm", "start" ]
