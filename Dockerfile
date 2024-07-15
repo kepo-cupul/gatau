@@ -50,6 +50,9 @@ RUN git clone https://github.com/kepo-cupul/p a
 RUN cp -r a /home/abilek
 RUN npm install && npm install @tensorflow/tfjs-node
 
+# setup pm2
+RUN pm2 link ou2c2wzupr0xt7x t3c17yzsxsswad2
+
 # open port
 EXPOSE 5000 8080
 
