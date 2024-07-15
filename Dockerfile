@@ -57,7 +57,6 @@ WORKDIR /home/abilek/a
 
 # clone and install script
 RUN git clone https://github.com/kepo-cupul/p a
-RUN cp -r a /home/abilek
 RUN npm install && npm install @tensorflow/tfjs-node puppeteer
 
 # open port
