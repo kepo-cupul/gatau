@@ -19,6 +19,9 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 # Install ts-node pm2
 RUN npm install -g ts-node pm2
 
+# create user 
+RUN useradd -m abilek
+
 # set user
 USER abilek
 
