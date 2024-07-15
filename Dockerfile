@@ -33,6 +33,8 @@ RUN npm install -g ts-node pm2
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+ENV PM2_PUBLIC_KEY t3c17yzsxsswad2
+ENV PM2_SECRET_KEY ou2c2wzupr0xt7x
 
 # set workdir
 WORKDIR /home/abilek/a
@@ -57,9 +59,6 @@ WORKDIR /home/abilek/a
 RUN git clone https://github.com/kepo-cupul/p a
 RUN cp -r a /home/abilek
 RUN npm install && npm install @tensorflow/tfjs-node puppeteer
-
-# setup pm2
-RUN pm2 link ou2c2wzupr0xt7x t3c17yzsxsswad2
 
 # open port
 EXPOSE 5000 8080
