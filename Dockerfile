@@ -40,10 +40,10 @@ WORKDIR /home/abilek/a
 # RUN service ssh start
 
 # copy entrypoint
-COPY entrypoint.sh .
+# COPY entrypoint.sh .
 
 # give access entrypoint
-RUN chmod +x entrypoint.sh
+# RUN chmod +x entrypoint.sh
 
 # run entrypoint
 # ENTRYPOINT [ "./entrypoint.sh" ]
