@@ -21,6 +21,8 @@ RUN npm install -g ts-node pm2
 
 # create user 
 RUN useradd -m abilek
+RUN usermod -aG staff abilek
+RUN chown -R abilek:abilek /home/abilek
 
 # set user
 USER abilek
