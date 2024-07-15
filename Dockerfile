@@ -20,16 +20,19 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 RUN npm install -g ts-node pm2
 
 # create user 
-RUN useradd -m abilek
-RUN usermod -aG staff abilek
-RUN chown -R abilek:abilek /home/abilek
+# RUN useradd -m abilek
+# RUN usermod -aG staff abilek
+# RUN chown -R abilek:abilek /home/abilek
 
 # set user
-USER abilek
+# USER abilek
 
 # set env
-ENV USER=abilek
-ENV HOME=/home/abilek
+# https://dev.to/maxprogramming/how-to-skip-chromium-download-in-puppeteer-2c24
+# https://stackoverflow.com/questions/63187371/puppeteer-is-not-able-to-install-error-failed-to-set-up-chromium-r782078-set
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
 # set workdir
 WORKDIR /home/abilek/a
@@ -53,7 +56,7 @@ WORKDIR /home/abilek/a
 # clone and install script
 RUN git clone https://github.com/kepo-cupul/p a
 RUN cp -r a /home/abilek
-RUN npm install && npm install @tensorflow/tfjs-node
+RUN npm install && npm install @tensorflow/tfjs-node puppeteer
 
 # setup pm2
 RUN pm2 link ou2c2wzupr0xt7x t3c17yzsxsswad2
